@@ -1,7 +1,7 @@
 package ua.rd.ioc;
 
-import org.junit.Ignore;
 import org.junit.Test;
+import ua.rd.ioc.exception.NoSuchBeanException;
 
 import java.util.*;
 

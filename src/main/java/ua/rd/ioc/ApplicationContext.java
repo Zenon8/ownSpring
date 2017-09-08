@@ -1,19 +1,33 @@
 package ua.rd.ioc;
 
+import ua.rd.ioc.exception.NoSuchBeanException;
+
 import java.util.Arrays;
 import java.util.List;
 
 
 public class ApplicationContext implements Context {
-    private BeanDefinition[] beanDefinitions;
 
-    public ApplicationContext(Config config) {
-        this.beanDefinitions = config.beanDefinitions();
-    }
+    private List<BeanDefinition> beanDefinitions;
+    private List<BeanFactory> beanPostProcessors;
+
 
     public ApplicationContext() {
         beanDefinitions = Config.EMPTY_BEANDEFINITIONS;//new BeanDefinition[0];
 
+    }
+
+    public ApplicationContext(ConfigReader config) {
+        this.beanDefinitions = config.beanDefinitions();
+        initIoc();
+    }
+
+    private void initIoc() {
+
+        for (BeanDefinition beanDefinition : beanDefinitions) {
+
+            BeanFactory beanFactory = new BeanFactory(beanDefinition);
+        }
     }
 
     public Object getBean(String beanName) throws IllegalAccessException, InstantiationException {

@@ -1,9 +1,11 @@
 package ua.rd.ioc;
 
 
+import java.util.List;
+
 public interface Config {
 
     BeanDefinition[] beanDefinitions();
-    BeanDefinition[] EMPTY_BEANDEFINITIONS = new BeanDefinition[0];
+    List<BeanDefinition> EMPTY_BEANDEFINITIONS = new BeanDefinition[0];
 
 }

@@ -13,7 +13,7 @@ public class BeanDefinitionImpl implements BeanDefinition {
 
     private String id;
     private String name;
-    private String className;
+    private String beanType;
     private String initMethod;
     private String destroyMethod;
     private LinkedHashMap<Class<?>, Object> constrArg = new LinkedHashMap<>();
@@ -22,11 +22,12 @@ public class BeanDefinitionImpl implements BeanDefinition {
 
     @Override
     public String getBeanName() {
-        return null;
+        return name;
     }
 
     @Override
-    public Class<?> getBeanType() {
-        return null;
+    public Class<?> getBeanType() throws ClassNotFoundException {
+
+        return Class.forName(beanType);
     }
 }

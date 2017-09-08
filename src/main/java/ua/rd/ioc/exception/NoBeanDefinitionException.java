@@ -1,4 +1,4 @@
-package ua.rd.ioc;
+package ua.rd.ioc.exception;
 
 public class NoBeanDefinitionException extends RuntimeException {
 
