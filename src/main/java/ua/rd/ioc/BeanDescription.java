@@ -1,13 +1,32 @@
 package ua.rd.ioc;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.*;
 
+@Getter
+@Setter
 public class BeanDescription {
-    private String idBean;
-    private String classBean;
+    private String id;
+    private String name;
+    private String className;
+    private String initMethod;
+    private String destroyMethod;
+    private LinkedHashMap<Class<?>, Object> constrArg = new LinkedHashMap<>();
+    private Map<String, Object> properties = new HashMap<>();
 
-    private Map<Class<?>, Object> arguments= new LinkedHashMap<>();
 
+    public BeanDescription(String id, String name, String className) {
+
+        if (className == null) {
+            throw new IllegalArgumentException("No specify a class type");
+        }
+
+        if (id == null) {
+            this.id = (name == null) ? String.valueOf(hashCode()) : name.toLowerCase();
+        }
+        this.id = id;
+        this.className = className;
+    }
 }
