@@ -3,9 +3,7 @@ package ua.rd.ioc;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Maksym_Petrenko on 9/7/2017.
- */
+
 public class ApplicationContext implements Context {
     private BeanDefinition[] beanDefinitions;
 

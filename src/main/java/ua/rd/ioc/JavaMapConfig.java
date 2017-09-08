@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 
-/**
- * Created by Maksym_Petrenko on 9/7/2017.
- */
+
 public class JavaMapConfig implements Config {
     private Map<String, Class<?>> beanDescriptions;
     public JavaMapConfig(Map<String, Class<?>> beanDescriptions) {

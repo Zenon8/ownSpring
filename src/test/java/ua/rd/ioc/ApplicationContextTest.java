@@ -7,9 +7,7 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Maksym_Petrenko on 9/7/2017.
- */
+
 public class ApplicationContextTest {
 
     @Test(expected = NoSuchBeanException.class)
