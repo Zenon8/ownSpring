@@ -1,7 +1,9 @@
 package ua.rd.ioc;
 
+import java.util.List;
+
 public interface ConfigReader {
 
-    BeanDefinition[] beanDefinitions();
+    List<BeanDefinition> beanDefinitions();
 
 }
